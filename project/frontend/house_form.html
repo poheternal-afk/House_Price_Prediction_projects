@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>House prediction form</title>
+        <style>
+        body {
+            font-family: Arial, sans-serif;
+            max-width: 480px;
+            margin: 40px auto;
+            padding: 24px;
+            border: 1px solid #e0e0e0;
+            border-radius: 8px;
+            background-color: #ffffff;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+        }
+        .form-group {
+            margin-bottom: 16px;
+        }
+        label {
+            display: block;
+            margin-bottom: 6px;
+            font-weight: bold;
+        }
+        input, select {
+            width: 100%;
+            padding: 10px;
+            box-sizing: border-box;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+        button {
+            width: 100%;
+            padding: 12px;
+            background-color: #007bff;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            font-size: 16px;
+            font-weight: bold;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: #0056b3;
+        }
+        #result {
+            margin-top: 20px;
+            padding: 16px;
+            border-radius: 6px;
+            display: none;
+        }
+        .success {
+            background-color: #e6f4ea;
+            color: #137333;
+            border: 1px solid #ceead6;
+        }
+        .error {
+            background-color: #fce8e6;
+            color: #c5221f;
+            border: 1px solid #fad2cf;
+        }
+    </style>
+</head>
+<body>
+<h2>Công cụ tính giá nhà dự đoán</h2>
+    
+    <form id="houseForm">
+        <div class="form-group">
+            <label for="area">Diện tích (m²):</label>
+            <input type="number" id="area" step="1" required placeholder="Nhập diện tích, ví dụ: 80">
+        </div>
+
+        <div class="form-group">
+            <label for="bedrooms">Số phòng ngủ:</label>
+            <input type="number" id="bedrooms" min="1" required placeholder="Nhập số phòng ngủ, ví dụ: 3">
+        </div>
+
+        <div class="form-group">
+            <label for="location">Tỉnh / Thành phố:</label>
+            <select id="location">
+                <option value="hanoi">Hà Nội</option>
+                <option value="hcmc">TP. Hồ Chí Minh</option>
+                <option value="other" selected>Khác (Tỉnh thành khác)</option>
+            </select>
+        </div>
+
+        <button type="submit">Dự đoán ngay</button>
+    </form>
+
+    <div id="result"></div>
+
+    <script src="app.js"></script>
+</body>
+</html>
